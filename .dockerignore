@@ -1,6 +1,7 @@
 # Git
 .git
 .gitignore
+.env
 
 # Python
 __pycache__/

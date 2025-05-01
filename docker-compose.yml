@@ -7,6 +7,7 @@ services:
       - .env
     environment:
       - PYTHONUNBUFFERED=1
+      - ENGINE=${ENGINE:-chromium}
       - HOST=${HOST:-0.0.0.0}
       - PORT=${PORT:-8000}
     healthcheck:

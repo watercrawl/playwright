@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2025-05-01
+
+### Added
+- Default proxy support via `DEFAULT_PROXY` environment variable
+- Proxy configuration parsing utility in new utils.py
+- dotenv support for loading environment variables
+- Enhanced logging for browser engine initialization
+
+### Changed
+- Updated Dockerfile to use official Playwright Docker image for better efficiency
+- Added browser launch arguments (`--no-sandbox`, `--disable-dev-shm-usage`) for all engines
+- Reorganized environment variable structure in .env.example
+- Improved error handling with detailed traceback information
+
+### Security
+- Added .env to dockerignore to prevent leaking sensitive information
+- Moved API key configuration to local development settings
+
 ## [1.1.1] - 2024-03-21
 
 ### Added

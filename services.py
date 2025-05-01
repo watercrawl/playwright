@@ -13,12 +13,12 @@ class PlaywrightService:
 
     async def start_browser(self, engine):
         if engine == "firefox":
-            self.browser = await self.playwright.firefox.launch(headless=True)
+            self.browser = await self.playwright.firefox.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
             return self
         elif engine == "webkit":
-            self.browser = await self.playwright.webkit.launch(headless=True)
+            self.browser = await self.playwright.webkit.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
             return self
-        self.browser = await self.playwright.chromium.launch(headless=True)
+        self.browser = await self.playwright.chromium.launch(headless=True, args=["--no-sandbox", "--disable-dev-shm-usage"])
         return self
 
     async def stop(self):
